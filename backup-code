@@ -1,0 +1,155 @@
+<div id="accordion">
+  <ul class="flex flex-col">
+    <li class="accordion-item is-active">
+      <h3>Who is The Secret CFO?</h3>
+      <p>I am a longtime CFO and senior finance professional for $bn+ business. Here is my full <a
+          href="https://www.cfosecrets.io/authors" target="_blank">bio.</a></p>
+    </li>
+    <li class="accordion-item">
+      <h3>Is it free?</h3>
+      <p>Yes all of my content is free.</p>
+    </li>
+    <li class="accordion-item">
+      <h3>Who is CFO Secrets for?</h3>
+      <p>It is primarily aimed at people who are currently CFOs or will be soon, but many others have enjoyed it
+        including; founders, investors, early career finance pros, or people who are just curious about finance.</p>
+    </li>
+    <li class="accordion-item">
+      <h3>How often do you send newsletters?</h3>
+      <p>Each Saturday, you get a deep dive into one part of my <a href="https://www.cfosecrets.io/archive-playbook"
+          target="_blank">Playbooks</a>. Each Tuesday, you get
+        a <a href="https://www.cfosecrets.io/archive-mailbag" target="_blank">Mailbag</a> post where I
+        answers 3
+        questions from fellow finance leaders. And occasionally, you will receive a '<a
+          href="https://www.cfosecrets.io/archive-spotlight" target="_blank">Spotlight</a>' post where I focus
+        on particular topic.</p>
+    </li>
+    <li class="accordion-item">
+      <h3>What makes CFO Secrets different?</h3>
+      <p>This is content written by an experienced CFO for CFOs. Most finance content is written by people who think
+        they
+        understand the CFO job, but have never actually done it… and it shows.</p>
+    </li>
+    <li class="accordion-item">
+      <h3>How do I change which newsletters I'm subscribed to?</h3>
+      <p>You can manage which newsletters you're subscribed to from your inbox. Every email I send has a link at the
+        bottom to update your preferences. If you need a step-by-step guide, <a
+          href="https://www.beehiiv.com/support/article/23235404312727-how-subscribers-can-manage-their-subscriptions?srsltid=AfmBOorIYcceIIjybjZO9qHajLHPPkBJPMWABHmQe_qmgh7ApdAcRm9x"
+          target="_blank">here's one that walks you through it</a>.</p>
+    </li>
+    <li class="accordion-item">
+      <h3>How do I advertise in a CFO Secrets newsletter?</h3>
+      <p>Leave your contact details here and one of my team will contact you. </a>.</p>
+    </li>
+    <li class="accordion-item">
+      <h3>I am building a product for CFOs/finance teams and would be interested in Secret CFO as an equity partner.
+      </h3>
+      <p>Feel free to send your pitch to <a href="mailto:mail@cfosecrets.io" target="_blank">mail@cfosecrets.io</a> once
+        you have a working Beta version / prototype.</p>
+    </li>
+    <li class="accordion-item">
+      <h3>I have other ideas for partnering. How do I reach out?</h3>
+      <p>Send a short summary to <a href="mailto:mail@cfosecrets.io" target="_blank">mail@cfosecrets.io</a></p>
+    </li>
+    <li class="accordion-item">
+      <h3>How do I reach Secret CFO? Does he read his email?</h3>
+      <p>While I can't respond to every email, I do read every email sent to <a href="mailto:mail@cfosecrets.io"
+          target="_blank">mail@cfosecrets.io</a></p>
+    </li>
+    <li class="accordion-item">
+      <h3>What's next for CFO Secrets?</h3>
+      <p>Huge plans … you'll have to wait and see for now.</p>
+    </li>
+  </ul>
+</div>
+
+<style>
+  #accordion {
+    margin-top: -20px;
+    font-family: "Trebuchet MS", system-ui, sans-serif;
+  }
+
+  .accordion-item {
+    cursor: pointer;
+    padding: 20px 40px 20px 0;
+    gap: 0.5rem;
+    position: relative;
+  }
+
+  .accordion-item:not(:last-of-type) {
+    border-bottom: 1px solid;
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .accordion-item:before,
+  .accordion-item:after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-size: 100%;
+    position: absolute;
+    right: 0;
+    top: 28px;
+    transform: rotate(-90deg);
+    transition: all ease-in .1s;
+  }
+
+  .accordion-item:before {
+    background-image: url(https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/a4018634-7535-4fc0-8356-3d9bd93e7c74/icon-min.png?t=1746307800);
+  }
+
+  .accordion-item:after {
+    background-image: url(https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/6c7e94e6-cdf0-42bc-a9ad-0b1c01a14785/icon-plus.png?t=1746307788);
+  }
+
+  .accordion-item h3 {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .accordion-item p {
+    height: 0;
+    opacity: 0;
+    margin-top: 0;
+    interpolate-size: keywords;
+    visibility: hidden;
+    transition: all ease-in .3s;
+    color: #666;
+  }
+
+  .accordion-item a {
+    text-decoration: underline;
+  }
+
+  .accordion-item.is-active p {
+    height: auto;
+    visibility: visible;
+    opacity: 100;
+    margin-top: 4px;
+  }
+
+  .accordion-item.is-active:before,
+  .accordion-item.is-active:after {
+    transform: rotate(0deg);
+  }
+
+  .accordion-item.is-active:after {
+    opacity: 0;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const accordion = document.getElementById("accordion");
+    const items = accordion.querySelectorAll(".accordion-item");
+
+    items.forEach((item) => {
+      item.addEventListener("click", () => {
+        // Remove 'is-active' from all items
+        items.forEach(i => i.classList.remove("is-active"));
+        // Add 'is-active' to the clicked item
+        item.classList.add("is-active");
+      });
+    });
+  });
+</script>
